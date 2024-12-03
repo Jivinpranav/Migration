@@ -1,0 +1,28 @@
+name: 01 - Building Blocks
+
+on: 
+ workflow_dispatch
+
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      # First step that fails initially
+      - name: Failed step # First step
+        run: |
+          echo "I will fail"
+          exit 1
+          
+      - name: Say goodbye #Second step
+        run: echo "Goodbye!"
+
+      - name: Succeeding step (updated version)
+        run: |
+          echo "This will now succeed"
+          exit 0

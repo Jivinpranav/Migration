@@ -1,0 +1,11 @@
+name: 03 workflow runners
+
+on:
+  workflow_dispatch
+
+jobs:
+ macos:
+   runs-on: macos-latest
+   steps:
+    - name: Show OS
+      run: echo "Run for $RUNNER_OS"

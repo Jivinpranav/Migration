@@ -1,0 +1,12 @@
+name: "02 - Workflow Events"
+
+on:
+  schedule:
+    - cron: '28 8 * * *' # Runs every day at 8:28 AM UTC (1:58 PM IST)
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the trigger
+        run: echo "Event name:'${{ github.event_name }}'"
